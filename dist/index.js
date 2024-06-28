@@ -34015,7 +34015,7 @@ throttling.VERSION = VERSION;
 throttling.triggersNotification = triggersNotification;
 
 
-;// CONCATENATED MODULE: ./node_modules/token-who-am-i/lib/getOctokit.js
+;// CONCATENATED MODULE: ./node_modules/token-who-am-i-action/lib/getOctokit.js
 
 
 
@@ -34056,7 +34056,7 @@ function getOctokit(githubToken) {
     return octokit;
 }
 
-;// CONCATENATED MODULE: ./node_modules/token-who-am-i/lib/index.js
+;// CONCATENATED MODULE: ./node_modules/token-who-am-i-action/lib/index.js
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
