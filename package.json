@@ -1,6 +1,6 @@
 {
   "name": "config-git-with-token-action",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "A template to create custom GitHub Action with TypeScript/JavaScript.",
   "main": "lib/index.js",
   "types": "lib/index.d.js",
