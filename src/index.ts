@@ -1,10 +1,4 @@
-import {
-  exportVariable,
-  getInput,
-  group,
-  notice,
-  setFailed,
-} from '@actions/core';
+import { exportVariable, getInput, group, setFailed } from '@actions/core';
 import { getExecOutput } from '@actions/exec';
 import { tokenWhoAmI } from 'token-who-am-i-action';
 
@@ -12,7 +6,6 @@ export async function configGitWithToken(githubToken: string): Promise<void> {
   const me = await group('Run token-who-am-i', async () => {
     return await tokenWhoAmI(githubToken);
   });
-  notice(`Token login: ${me.login}`);
 
   await group('Configure gh', async () => {
     exportVariable('GH_TOKEN', githubToken);
