@@ -34163,7 +34163,6 @@ function configGitWithToken(githubToken) {
         const me = yield (0,core.group)('Run token-who-am-i', () => src_awaiter(this, void 0, void 0, function* () {
             return yield tokenWhoAmI(githubToken);
         }));
-        (0,core.notice)(`Token login: ${me.login}`);
         yield (0,core.group)('Configure gh', () => src_awaiter(this, void 0, void 0, function* () {
             (0,core.exportVariable)('GH_TOKEN', githubToken);
             yield (0,exec.getExecOutput)('gh', ['auth', 'status']);
