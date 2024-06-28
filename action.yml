@@ -1,4 +1,4 @@
-name: 'TypeScript Github Action Template'
+name: 'Config Git with Token'
 description: 'A template to create custom GitHub Action with TypeScript/JavaScript.'
 inputs:
   github-token:
@@ -11,5 +11,5 @@ runs:
   post: 'dist/index.js'
   post-if: always()
 branding:
-  icon: 'box'
-  color: 'yellow'
+  icon: 'user-check'
+  color: 'green'
