@@ -6,7 +6,7 @@ import {
   setFailed,
 } from '@actions/core';
 import { getExecOutput } from '@actions/exec';
-import { tokenWhoAmI } from 'token-who-am-i';
+import { tokenWhoAmI } from 'token-who-am-i-action';
 
 export async function configGitWithToken(githubToken: string): Promise<void> {
   const me = await group('Run token-who-am-i', async () => {
