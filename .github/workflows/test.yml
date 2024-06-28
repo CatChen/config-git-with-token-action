@@ -31,6 +31,28 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Verify
+        run: |
+          GIT_USER_NAME=$(git config --get user.name)
+          if [[ "$GIT_USER_NAME" != "GitHub Actions" ]]
+          then
+            echo "::error::Expected git config user.name to be 'GitHub Actions' but got '$GIT_USER_NAME'"
+            exit 1
+          fi
+
+          GIT_USER_EMAIL=$(git config --get user.email)
+          if [[ "$GIT_USER_EMAIL" != "41898282+github-actions[bot]@users.noreply.github.com" ]]
+          then
+            echo "::error::Expected git config user.email to be '41898282+github-actions[bot]@users.noreply.github.com' but got '$GIT_USER_EMAIL'"
+            exit 1
+          fi
+
+          GIT_REMOTE_URL=$(git remote get-url origin)
+          if [[ "$GIT_REMOTE_URL" != https://github-actions[bot]:${{ secrets.GITHUB_TOKEN }} ]]
+          then
+            echo "::error::Expected git remote url to have login and token but got '$GIT_REMOTE_URL'"
+          fi
+
   test-with-user-app-installation-token:
     name: Test with User App Installation Token
     runs-on: ubuntu-latest
@@ -59,6 +81,28 @@ jobs:
         with:
           github-token: ${{ steps.get-github-app-token.outputs.token }}
 
+      - name: Verify
+        run: |
+          GIT_USER_NAME=$(git config --get user.name)
+          if [[ "$GIT_USER_NAME" != "Check Git Status Bot" ]]
+          then
+            echo "::error::Expected git config user.name to be 'Check Git Status Bot' but got '$GIT_USER_NAME'"
+            exit 1
+          fi
+
+          GIT_USER_EMAIL=$(git config --get user.email)
+          if [[ "$GIT_USER_EMAIL" != "172423145+check-git-status-bot[bot]@users.noreply.github.com" ]]
+          then
+            echo "::error::Expected git config user.email to be '172423145+check-git-status-bot[bot]@users.noreply.github.com' but got '$GIT_USER_EMAIL'"
+            exit 1
+          fi
+
+          GIT_REMOTE_URL=$(git remote get-url origin)
+          if [[ "$GIT_REMOTE_URL" != https://check-git-status-bot[bot]:${{ secrets.GITHUB_TOKEN }} ]]
+          then
+            echo "::error::Expected git remote url to have login and token but got '$GIT_REMOTE_URL'"
+          fi
+
   test-with-repo-app-installation-token:
     name: Test with Repo App Installation Token
     runs-on: ubuntu-latest
@@ -86,6 +130,28 @@ jobs:
         with:
           github-token: ${{ steps.get-github-app-token.outputs.token }}
 
+      - name: Verify
+        run: |
+          GIT_USER_NAME=$(git config --get user.name)
+          if [[ "$GIT_USER_NAME" != "Check Git Status Bot" ]]
+          then
+            echo "::error::Expected git config user.name to be 'Check Git Status Bot' but got '$GIT_USER_NAME'"
+            exit 1
+          fi
+
+          GIT_USER_EMAIL=$(git config --get user.email)
+          if [[ "$GIT_USER_EMAIL" != "172423145+check-git-status-bot[bot]@users.noreply.github.com" ]]
+          then
+            echo "::error::Expected git config user.email to be '172423145+check-git-status-bot[bot]@users.noreply.github.com' but got '$GIT_USER_EMAIL'"
+            exit 1
+          fi
+
+          GIT_REMOTE_URL=$(git remote get-url origin)
+          if [[ "$GIT_REMOTE_URL" != https://check-git-status-bot[bot]:${{ secrets.GITHUB_TOKEN }} ]]
+          then
+            echo "::error::Expected git remote url to have login and token but got '$GIT_REMOTE_URL'"
+          fi
+
   test-with-classic-personal-access-token:
     name: Test with Classic Personal Access Token
     runs-on: ubuntu-latest
@@ -103,3 +169,25 @@ jobs:
         uses: ./
         with:
           github-token: ${{ secrets.CLASSIC_PERSONAL_ACCESS_TOKEN }}
+
+      - name: Verify
+        run: |
+          GIT_USER_NAME=$(git config --get user.name)
+          if [[ "$GIT_USER_NAME" != "Cat Chen" ]]
+          then
+            echo "::error::Expected git config user.name to be 'Cat Chen' but got '$GIT_USER_NAME'"
+            exit 1
+          fi
+
+          GIT_USER_EMAIL=$(git config --get user.email)
+          if [[ "$GIT_USER_EMAIL" != "catchen@catchen.me" ]]
+          then
+            echo "::error::Expected git config user.email to be 'catchen@catchen.me' but got '$GIT_USER_EMAIL'"
+            exit 1
+          fi
+
+          GIT_REMOTE_URL=$(git remote get-url origin)
+          if [[ "$GIT_REMOTE_URL" != https://CatChen:${{ secrets.GITHUB_TOKEN }} ]]
+          then
+            echo "::error::Expected git remote url to have login and token but got '$GIT_REMOTE_URL'"
+          fi
