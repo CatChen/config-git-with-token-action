@@ -10,7 +10,9 @@ When writing a [composite action](https://docs.github.com/en/actions/creating-ac
 runs:
   using: 'composite'
   steps:
-    - uses: CatChen/config-git-with-token-action@v0.1
+    - uses: actions/checkout@v4
+
+    - uses: CatChen/config-git-with-token-action@v1
       with:
         github-token: ${{ inputs.github-token }}
 
@@ -19,6 +21,12 @@ runs:
         echo "Set up git user name: $(git config --get user.name)"
         echo "Set up git user email: $(git config --get user.email)"
         echo "Set up git remote origin with login and token: $(git remote get-url origin)"
+
+    - shell: bash
+      run: |
+        touch test_file
+        git commit test_file -m 'Created test file'
+        git push
 ```
 
 ## Usage as a JavaScript Package
