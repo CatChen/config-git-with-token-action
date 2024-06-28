@@ -1,11 +1,44 @@
-# Typescript GitHub Action Template
+# config-git-with-token-action
 
-A template to create custom GitHub Action with TypeScript/JavaScript.
+As a GitHub Actions author, have you received GitHub token and tried to `git commit` and `git push` on behave of the identity behind that token? This GitHub Action helps you set up `git` and `gh` to operate as if you are the user or bot behind the GitHub token.
 
-## Secrets
+## Usage as a Reusable Action
 
-The following secrets need to be set up before you can use workflows already defined in this template:
+When writing a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action), use this action as a step to set up `git` and `gh` with the token:
 
-- **`CHECK_GIT_STATUS_BOT_APP_ID`** and **`CHECK_GIT_STATUS_BOT_APP_PRIVATE_KEY`**: Used by the [`Build` workflow](https://github.com/CatChen/typescript-github-action-template/blob/main/.github/workflows/build.yml). If you don't want to set up a bot you can remove the `actions/create-github-app-token` step and remove all references to `steps.get-github-app-token.outputs.token`.
-- **`ACCEPT_TO_SHIP_BOT_APP_ID`** and **`ACCEPT_TO_SHIP_BOT_APP_PRIVATE_KEY`**: Used by the [`Ship` workflow](https://github.com/CatChen/typescript-github-action-template/blob/main/.github/workflows/ship.yml). If you don't want to set up a bot you can remove the two `actions/create-github-app-token` steps and remove all references to `steps.get-github-app-token.outputs.token`.
-- **`NPM_TOKEN`**: Used by the [`Release` workflow](https://github.com/CatChen/typescript-github-action-template/blob/main/.github/workflows/release.yml). This is necessary for publishing the NPM package to NPM. If you don't want to publish to NPM you can remove the `publish` job.
+```yaml
+runs:
+  using: 'composite'
+  steps:
+    - uses: CatChen/config-git-with-token-action@v0.1
+      with:
+        github-token: ${{ inputs.github-token }}
+
+    - shell: bash
+      run: |
+        echo "Set up git user name: $(git config --get user.name)"
+        echo "Set up git user email: $(git config --get user.email)"
+        echo "Set up git remote origin with login and token: $(git remote get-url origin)"
+```
+
+## Usage as a JavaScript Package
+
+When creating a [JavaScript action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action), install the `config-git-with-token-action` package and use it to set up `git` and `gh` in the same way.
+
+```bash
+npm i config-git-with-token-action
+```
+
+Use `npm` from above or `yarn` from below to install the `token-who-am-i-action` package.
+
+```bash
+yarn add config-git-with-token-action
+```
+
+Import `configGitWithToken` function from the package and call it to set up `git` and `gh`:
+
+```TypeScript
+import { configGitWithToken } from 'config-git-with-token-action';
+
+await configGitWithToken(githubToken);
+```
