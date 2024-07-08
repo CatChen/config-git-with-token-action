@@ -1,5 +1,10 @@
 # config-git-with-token-action
 
+[![Build](https://github.com/CatChen/config-git-with-token-action/actions/workflows/build.yml/badge.svg?branch=main&event=push)](https://github.com/CatChen/config-git-with-token-action/actions/workflows/build.yml)
+[![Test](https://github.com/CatChen/config-git-with-token-action/actions/workflows/test.yml/badge.svg?branch=main&event=push)](https://github.com/CatChen/config-git-with-token-action/actions/workflows/test.yml)
+[![ESLint](https://github.com/CatChen/config-git-with-token-action/actions/workflows/eslint.yml/badge.svg?branch=main&event=push)](https://github.com/CatChen/config-git-with-token-action/actions/workflows/eslint.yml)
+[![CodeQL](https://github.com/CatChen/config-git-with-token-action/actions/workflows/codeql.yml/badge.svg?branch=main&event=schedule)](https://github.com/CatChen/config-git-with-token-action/actions/workflows/codeql.yml)
+
 As a GitHub Actions author, have you received GitHub token and tried to `git commit` and `git push` on behave of the identity behind that token? This GitHub Action helps you set up `git` and `gh` to operate as if you are the user or bot behind the GitHub token.
 
 ## Usage as a Reusable Action
