@@ -63,6 +63,8 @@ jobs:
             exit 1
           fi
 
+          git ls-remote origin
+
   test-with-user-app-installation-token:
     name: Test with User App Installation Token
     if: ${{ !startsWith(github.head_ref, 'workflows/tests/') }}
