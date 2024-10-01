@@ -34177,29 +34177,33 @@ var configGit_awaiter = (undefined && undefined.__awaiter) || function (thisArg,
 };
 
 
-function configGit(githubToken, username, name, email) {
+function configGit(githubToken, me) {
     return configGit_awaiter(this, void 0, void 0, function* () {
         yield (0,core.group)('Configure git', () => configGit_awaiter(this, void 0, void 0, function* () {
+            var _a, _b;
             yield (0,exec.getExecOutput)('git', ['config', '--list']);
             yield (0,exec.getExecOutput)('git', [
                 'config',
                 '--global',
                 'user.email',
-                email !== null && email !== void 0 ? email : '',
+                (_a = me.email) !== null && _a !== void 0 ? _a : '',
             ]);
             yield (0,exec.getExecOutput)('git', [
                 'config',
                 '--global',
                 'user.name',
-                name !== null && name !== void 0 ? name : username,
+                (_b = me.name) !== null && _b !== void 0 ? _b : me.login,
             ]);
+            if (me.type === 'Bot') {
+                return;
+            }
             const remoteOutput = yield (0,exec.getExecOutput)('git', [
                 'remote',
                 'get-url',
                 'origin',
             ]);
             const originUrl = remoteOutput.stdout.trim();
-            const originUrlWithToken = originUrl.replace(/^https:\/\//, `https://${username}:${githubToken}@`);
+            const originUrlWithToken = originUrl.replace(/^https:\/\//, `https://${me.login}:${githubToken}@`);
             yield (0,exec.getExecOutput)('git', [
                 'remote',
                 'set-url',
@@ -34230,7 +34234,7 @@ function configGitWithToken(githubToken) {
             return yield tokenWhoAmI(githubToken);
         }));
         yield configGh(githubToken);
-        yield configGit(githubToken, me.login, me.name, me.email);
+        yield configGit(githubToken, me);
     });
 }
 function src_run() {

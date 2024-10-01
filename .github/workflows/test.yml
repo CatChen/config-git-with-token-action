@@ -51,19 +51,22 @@ jobs:
             exit 1
           fi
 
-          GIT_REMOTE_URL=$(git remote get-url origin)
-          if [[ ! "$GIT_REMOTE_URL" =~ ^'https://github-actions[bot]' ]]
-          then
-            echo "::error::Expected git remote url to have login but got '$GIT_REMOTE_URL'"
-            exit 1
-          fi
-          if [[ ! "$GIT_REMOTE_URL" =~ ^'https://github-actions[bot]:'"$TEST_TOKEN" ]]
-          then
-            echo "::error::Expected git remote url to have token but got '$GIT_REMOTE_URL'"
-            exit 1
-          fi
+          # GIT_REMOTE_URL=$(git remote get-url origin)
+          # if [[ ! "$GIT_REMOTE_URL" =~ ^'https://github-actions[bot]' ]]
+          # then
+          #   echo "::error::Expected git remote url to have login but got '$GIT_REMOTE_URL'"
+          #   exit 1
+          # fi
+          # if [[ ! "$GIT_REMOTE_URL" =~ ^'https://github-actions[bot]:'"$TEST_TOKEN" ]]
+          # then
+          #   echo "::error::Expected git remote url to have token but got '$GIT_REMOTE_URL'"
+          #   exit 1
+          # fi
 
+      - name: Verify remote access
+        run: |
           git ls-remote origin
+          gh repo view
 
   test-with-user-app-installation-token:
     name: Test with User App Installation Token
@@ -112,17 +115,22 @@ jobs:
             exit 1
           fi
 
-          GIT_REMOTE_URL=$(git remote get-url origin)
-          if [[ ! "$GIT_REMOTE_URL" =~ ^'https://check-git-status-bot[bot]' ]]
-          then
-            echo "::error::Expected git remote url to have login and token but got '$GIT_REMOTE_URL'"
-            exit 1
-          fi
-          if [[ ! "$GIT_REMOTE_URL" =~ ^'https://check-git-status-bot[bot]:'"$TEST_TOKEN" ]]
-          then
-            echo "::error::Expected git remote url to have token but got '$GIT_REMOTE_URL'"
-            exit 1
-          fi
+          # GIT_REMOTE_URL=$(git remote get-url origin)
+          # if [[ ! "$GIT_REMOTE_URL" =~ ^'https://check-git-status-bot[bot]' ]]
+          # then
+          #   echo "::error::Expected git remote url to have login and token but got '$GIT_REMOTE_URL'"
+          #   exit 1
+          # fi
+          # if [[ ! "$GIT_REMOTE_URL" =~ ^'https://check-git-status-bot[bot]:'"$TEST_TOKEN" ]]
+          # then
+          #   echo "::error::Expected git remote url to have token but got '$GIT_REMOTE_URL'"
+          #   exit 1
+          # fi
+
+      - name: Verify remote access
+        run: |
+          git ls-remote origin
+          gh repo view
 
   test-with-repo-app-installation-token:
     name: Test with Repo App Installation Token
@@ -170,17 +178,22 @@ jobs:
             exit 1
           fi
 
-          GIT_REMOTE_URL=$(git remote get-url origin)
-          if [[ ! "$GIT_REMOTE_URL" =~ ^'https://check-git-status-bot[bot]' ]]
-          then
-            echo "::error::Expected git remote url to have login and token but got '$GIT_REMOTE_URL'"
-            exit 1
-          fi
-          if [[ ! "$GIT_REMOTE_URL" =~ ^'https://check-git-status-bot[bot]:'"$TEST_TOKEN" ]]
-          then
-            echo "::error::Expected git remote url to have token but got '$GIT_REMOTE_URL'"
-            exit 1
-          fi
+          # GIT_REMOTE_URL=$(git remote get-url origin)
+          # if [[ ! "$GIT_REMOTE_URL" =~ ^'https://check-git-status-bot[bot]' ]]
+          # then
+          #   echo "::error::Expected git remote url to have login and token but got '$GIT_REMOTE_URL'"
+          #   exit 1
+          # fi
+          # if [[ ! "$GIT_REMOTE_URL" =~ ^'https://check-git-status-bot[bot]:'"$TEST_TOKEN" ]]
+          # then
+          #   echo "::error::Expected git remote url to have token but got '$GIT_REMOTE_URL'"
+          #   exit 1
+          # fi
+
+      - name: Verify remote access
+        run: |
+          git ls-remote origin
+          gh repo view
 
   test-with-classic-personal-access-token:
     name: Test with Classic Personal Access Token
@@ -230,3 +243,8 @@ jobs:
             echo "::error::Expected git remote url to have token but got '$GIT_REMOTE_URL'"
             exit 1
           fi
+
+      - name: Verify remote access
+        run: |
+          git ls-remote origin
+          gh repo view
