@@ -10,7 +10,7 @@ export async function configGitWithToken(githubToken: string): Promise<void> {
 
   await configGh(githubToken);
 
-  await configGit(githubToken, me.login, me.name, me.email);
+  await configGit(githubToken, me);
 }
 
 async function run(): Promise<void> {
