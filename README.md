@@ -17,7 +17,7 @@ runs:
   steps:
     - uses: actions/checkout@v4
 
-    - uses: CatChen/config-git-with-token-action@v1
+    - uses: CatChen/config-git-with-token-action@v2
       with:
         github-token: ${{ inputs.github-token }}
 
@@ -53,5 +53,5 @@ Import `configGitWithToken` function from the package and call it to set up `git
 ```TypeScript
 import { configGitWithToken } from 'config-git-with-token-action';
 
-await configGitWithToken(githubToken);
+await configGitWithToken({ githubToken });
 ```
