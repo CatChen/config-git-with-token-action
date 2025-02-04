@@ -1644,10 +1644,10 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-token-who-am-i-action@^1.0.0:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-1.0.11.tgz#6bbd7ec80372fc5ae86f01db5c6432636fd24a49"
-  integrity sha512-SC67E1/+Ix/YCxqXIuYfk/hp47Owpd0B3QJQs8wLJ1pPrtaIzE/j8UWezCBCR70yidkdtbHpuEXrptnj7mRX3Q==
+token-who-am-i-action@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.0.tgz#1139fadea46fd235356f658cb87763147fbc26f6"
+  integrity sha512-g5h9TwGi3oQRDnndbCBkiRNrgS4tc67drrh060lnBxNn3c1m7JmQaV4he5H9Cse7uzmElNoyhUGrriA75oGY/A==
   dependencies:
     "@actions/core" "^1.10.0"
     "@actions/github" "^6.0.0"

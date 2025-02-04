@@ -1,1 +1,3 @@
-export declare function configGitWithToken(githubToken: string): Promise<void>;
+export declare function configGitWithToken({ githubToken, }: {
+    githubToken: string;
+}): Promise<void>;
