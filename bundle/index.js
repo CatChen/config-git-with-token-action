@@ -33564,15 +33564,9 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 };
 
 
-<<<<<<< HEAD
-function tokenWhoAmI(githubToken) {
-    return __awaiter(this, void 0, void 0, function* () {
-        var _a;
-=======
 function tokenWhoAmI(_a) {
     return __awaiter(this, arguments, void 0, function* ({ githubToken, }) {
         var _b;
->>>>>>> 04a5e25 (Modified tokenWhoAmI arguments to an object)
         const octokit = getOctokit(githubToken);
         const { viewer: { login, global_id: globalId }, } = yield octokit.graphql(`
       query {
@@ -33596,11 +33590,7 @@ function tokenWhoAmI(_a) {
         (0,core.notice)(`Type: ${type}`);
         (0,core.setOutput)('type', type);
         if (type === 'User') {
-<<<<<<< HEAD
-            const scopes = (_a = xOauthScopes === null || xOauthScopes === void 0 ? void 0 : xOauthScopes.split(',').map((scope) => scope.trim())) !== null && _a !== void 0 ? _a : undefined;
-=======
             const scopes = (_b = xOauthScopes === null || xOauthScopes === void 0 ? void 0 : xOauthScopes.split(',').map((scope) => scope.trim())) !== null && _b !== void 0 ? _b : undefined;
->>>>>>> 04a5e25 (Modified tokenWhoAmI arguments to an object)
             if (scopes !== undefined) {
                 (0,core.notice)(`Scopes: ${xOauthScopes}`);
                 (0,core.setOutput)('scopes', xOauthScopes);
