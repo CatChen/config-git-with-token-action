@@ -1654,9 +1654,9 @@ to-regex-range@^5.0.1:
     is-number "^7.0.0"
 
 token-who-am-i-action@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.2.tgz#fbb7d2fbe349d7077a7b9052d0e745b9cc84d29b"
-  integrity sha512-7YN8kLs9POhB2UGz9aP+xMPcW82JruanVj1ExQplpcy+mXv4EDwEtOhsYOVhgptr6UVB0b9dZruYUQ38U4tYIw==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.3.tgz#5fc93a34b0fb4024ecf5aa53feeecd6b3ec0542a"
+  integrity sha512-HH1xCxG+4s1fGCEIo+URR6RWxvOR9KQ8pRk6zs8uqQOGyr3m1tP4ND6r7IHO/nPuZBej50hbhhARqXo1405N1Q==
   dependencies:
     "@actions/core" "^1.10.0"
     "@actions/github" "^6.0.0"
