@@ -2110,9 +2110,9 @@ toidentifier@1.0.1:
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
 
 token-who-am-i-action@^2.0.0:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.5.tgz#8cfbb4d2a3ddf374ed7d0b693243694586b2563e"
-  integrity sha512-5dCWdMuI1XftdSfU8keiZaNs+fMa4KFdNESV6qqx2iBQigA20lFz+1k+7yt8jMtbkmnmg1zVTUp75QuR5dG/8Q==
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.6.tgz#d5cb5af71c7c3cd727b6ddcaa72e192807abdbd4"
+  integrity sha512-OVho4w2xzc7rmkH8CZ9RroNJLclLXYrsPOg13lzuNwLWKIIxp5xxxhD2MyRsY9bMHYePmc0BVtHojhC1qNCDoQ==
   dependencies:
     "@actions/core" "^1.10.0"
     "@actions/github" "^6.0.0"
