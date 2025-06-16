@@ -33211,7 +33211,7 @@ class RequestError extends Error {
     if (options.request.headers.authorization) {
       requestCopy.headers = Object.assign({}, options.request.headers, {
         authorization: options.request.headers.authorization.replace(
-          / .*$/,
+          /(?<! ) .*$/,
           " [REDACTED]"
         )
       });
@@ -33277,7 +33277,7 @@ function retry(octokit, octokitOptions) {
     {
       enabled: true,
       retryAfterBaseValue: 1e3,
-      doNotRetry: [400, 401, 403, 404, 422, 451],
+      doNotRetry: [400, 401, 403, 404, 410, 422, 451],
       retries: 3
     },
     octokitOptions.retry
