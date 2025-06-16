@@ -450,19 +450,19 @@
   dependencies:
     "@octokit/types" "^12.6.0"
 
-"@octokit/plugin-retry@^7.1.2":
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-retry/-/plugin-retry-7.1.2.tgz#242e2d19a72a50b5113bb25d7d2c622ce0373fa0"
-  integrity sha512-XOWnPpH2kJ5VTwozsxGurw+svB2e61aWlmk5EVIYZPwFK5F9h4cyPyj9CIKRyMXMHSwpIsI3mPOdpMmrRhe7UQ==
+"@octokit/plugin-retry@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-retry/-/plugin-retry-8.0.1.tgz#ee4a0487d31b97ad3deaf737faad68abeca3c227"
+  integrity sha512-KUoYR77BjF5O3zcwDQHRRZsUvJwepobeqiSSdCJ8lWt27FZExzb0GgVxrhhfuyF6z2B2zpO0hN5pteni1sqWiw==
   dependencies:
-    "@octokit/request-error" "^6.0.0"
-    "@octokit/types" "^13.0.0"
+    "@octokit/request-error" "^7.0.0"
+    "@octokit/types" "^14.0.0"
     bottleneck "^2.15.3"
 
-"@octokit/plugin-throttling@^10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-throttling/-/plugin-throttling-10.0.0.tgz#3ca3c2d3b6e1deb263462f5d35ce6727527116ef"
-  integrity sha512-Kuq5/qs0DVYTHZuBAzCZStCzo2nKvVRo/TDNhCcpC2TKiOGz/DisXMCvjt3/b5kr6SCI1Y8eeeJTHBxxpFvZEg==
+"@octokit/plugin-throttling@^11.0.1":
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-throttling/-/plugin-throttling-11.0.1.tgz#31a0b5e759f0313514d9522a4103360f17ffc2e4"
+  integrity sha512-S+EVhy52D/272L7up58dr3FNSMXWuNZolkL4zMJBNIfIxyZuUcczsQAU4b5w6dewJXnKYVgSHSV5wxitMSW1kw==
   dependencies:
     "@octokit/types" "^14.0.0"
     bottleneck "^2.15.3"
@@ -476,12 +476,12 @@
     deprecation "^2.0.0"
     once "^1.4.0"
 
-"@octokit/request-error@^6.0.0":
-  version "6.1.5"
-  resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-6.1.5.tgz#907099e341c4e6179db623a0328d678024f54653"
-  integrity sha512-IlBTfGX8Yn/oFPMwSfvugfncK2EwRLjzbrpifNaMY8o/HTEAFqCA1FZxjD9cWvSKBHgrIhc4CSBIzMxiLsbzFQ==
+"@octokit/request-error@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-7.0.0.tgz#48ae2cd79008315605d00e83664891a10a5ddb97"
+  integrity sha512-KRA7VTGdVyJlh0cP5Tf94hTiYVVqmt2f3I6mnimmaVz4UG3gQV/k4mDJlJv3X67iX6rmN7gSHCF8ssqeMnmhZg==
   dependencies:
-    "@octokit/types" "^13.0.0"
+    "@octokit/types" "^14.0.0"
 
 "@octokit/request@^8.3.0", "@octokit/request@^8.3.1", "@octokit/request@^8.4.1":
   version "8.4.1"
@@ -1627,14 +1627,14 @@ to-regex-range@^5.0.1:
     is-number "^7.0.0"
 
 token-who-am-i-action@^2.0.0:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.6.tgz#d5cb5af71c7c3cd727b6ddcaa72e192807abdbd4"
-  integrity sha512-OVho4w2xzc7rmkH8CZ9RroNJLclLXYrsPOg13lzuNwLWKIIxp5xxxhD2MyRsY9bMHYePmc0BVtHojhC1qNCDoQ==
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.7.tgz#98182d5d95b7a69db34e8dfa5f89a0a9d61cd421"
+  integrity sha512-6UQn4dzq9/oJP6Nej/XkUHNiv5BOav5bsvaTOeUxAn2O6Cg+oRSROZ1d7rrii8zNO1Y7YvhKzezllc4t85uFkw==
   dependencies:
     "@actions/core" "^1.10.0"
     "@actions/github" "^6.0.0"
-    "@octokit/plugin-retry" "^7.1.2"
-    "@octokit/plugin-throttling" "^10.0.0"
+    "@octokit/plugin-retry" "^8.0.1"
+    "@octokit/plugin-throttling" "^11.0.1"
 
 ts-api-utils@^2.1.0:
   version "2.1.0"
