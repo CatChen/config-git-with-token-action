@@ -46,9 +46,9 @@
     "typescript-eslint": "^8.0.0"
   },
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/exec": "^1.1.1",
-    "@actions/github": "^6.0.0",
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0",
+    "@actions/github": "^9.0.0",
     "token-who-am-i-action": "^2.0.0"
   },
   "lint-staged": {
