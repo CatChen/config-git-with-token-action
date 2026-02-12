@@ -91,6 +91,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           check-latest: true
+          registry-url: https://registry.npmjs.org/
           cache: yarn
 
       - id: release
@@ -127,6 +128,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           check-latest: true
+          registry-url: https://registry.npmjs.org/
           cache: yarn
 
       - name: Build
