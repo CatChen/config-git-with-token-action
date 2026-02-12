@@ -42,7 +42,7 @@ When creating a [JavaScript action](https://docs.github.com/en/actions/creating-
 npm i config-git-with-token-action
 ```
 
-Use `npm` from above or `yarn` from below to install the `token-who-am-i-action` package.
+Use `npm` from above or `yarn` from below to install the `config-git-with-token-action` package.
 
 ```bash
 yarn add config-git-with-token-action
