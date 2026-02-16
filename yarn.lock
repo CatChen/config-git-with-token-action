@@ -310,6 +310,11 @@
     "@eslint/core" "^1.1.0"
     levn "^0.4.1"
 
+"@graphql-typed-document-node/core@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.2.0.tgz#5f3d96ec6b2354ad6d8a28bf216a1d97b5426861"
+  integrity sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"
@@ -1527,12 +1532,13 @@ to-regex-range@^5.0.1:
     is-number "^7.0.0"
 
 token-who-am-i-action@^2.0.0:
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.11.tgz#b9077e466dee36ffd98258d6ef450b7750e7dfce"
-  integrity sha512-phIWTN+lwkZI8WNi0Sdl9XgsQUG/fzZIJmuQU8n78Pp38VyAIEsLdACM9zgZtd4wLeHx+rJStLgTnzjug6DELQ==
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/token-who-am-i-action/-/token-who-am-i-action-2.0.12.tgz#73cc94779bc022e79acfa50a38d395b613aed423"
+  integrity sha512-hcIFmdI61m5E0I8x9wfBsJyjrfTUCOFXKqIyacvBmazTZXTKuv9MFy7WgMs+jJKk8ONrfcsBrXKdj5VcuBXIRQ==
   dependencies:
     "@actions/core" "^3.0.0"
     "@actions/github" "^9.0.0"
+    "@graphql-typed-document-node/core" "^3.2.0"
     "@octokit/plugin-retry" "^8.0.1"
     "@octokit/plugin-throttling" "^11.0.1"
 
