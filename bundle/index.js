@@ -37790,7 +37790,7 @@ function getOctokit(githubToken) {
             },
         },
         retry: {
-            doNotRetry: ['429'],
+            doNotRetry: [429],
         },
     }));
     octokit.graphql = octokit.graphql.defaults({
@@ -37799,6 +37799,26 @@ function getOctokit(githubToken) {
         },
     });
     return octokit;
+}
+
+;// CONCATENATED MODULE: ./node_modules/token-who-am-i-action/dist/tokenKind.js
+function detectTokenKind(token) {
+    if (token.startsWith('ghp_')) {
+        return 'pat-classic';
+    }
+    if (token.startsWith('github_pat_')) {
+        return 'pat-fine-grained';
+    }
+    if (token.startsWith('gho_')) {
+        return 'oauth-access-token';
+    }
+    if (token.startsWith('ghu_')) {
+        return 'github-app-user-access-token';
+    }
+    if (token.startsWith('ghs_')) {
+        return 'github-app-installation-access-token';
+    }
+    return 'unknown';
 }
 
 ;// CONCATENATED MODULE: ./node_modules/token-who-am-i-action/dist/index.js
@@ -37811,6 +37831,7 @@ var dist_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arg
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 
 
 
@@ -37837,6 +37858,9 @@ function tokenWhoAmI(_a) {
     return dist_awaiter(this, arguments, void 0, function* ({ githubToken, }) {
         var _b;
         const octokit = getOctokit(githubToken);
+        const tokenKind = detectTokenKind(githubToken);
+        notice(`Token Kind: ${tokenKind}`);
+        setOutput('token-kind', tokenKind);
         const { viewer: { login, globalId }, } = yield octokit.graphql(queryViewerIdentity.toString(), {});
         notice(`Login: ${login}`);
         setOutput('login', login);
@@ -37865,6 +37889,7 @@ function tokenWhoAmI(_a) {
                 email: email !== null && email !== void 0 ? email : undefined,
                 scopes,
                 type,
+                tokenKind,
             };
         }
         else if (type === 'Bot') {
@@ -37897,6 +37922,7 @@ function tokenWhoAmI(_a) {
                 name: botName,
                 email: botEmail,
                 type,
+                tokenKind,
             };
         }
         else {
