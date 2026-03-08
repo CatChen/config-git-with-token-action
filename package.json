@@ -1,6 +1,6 @@
 {
   "name": "config-git-with-token-action",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "This GitHub Action configures git and gh to act as the user or bot behind a GitHub token.",
   "packageManager": "yarn@4.13.0",
   "main": "dist/index.js",
