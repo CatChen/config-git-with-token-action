@@ -15,7 +15,9 @@ When writing a [composite action](https://docs.github.com/en/actions/creating-ac
 runs:
   using: 'composite'
   steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
 
     - uses: CatChen/config-git-with-token-action@v2
       with:
@@ -55,3 +57,11 @@ import { configGitWithToken } from 'config-git-with-token-action';
 
 await configGitWithToken({ githubToken });
 ```
+
+## FAQ
+
+### Why doesn't `git push` trigger downstream Workflows when I use this GitHub Action??
+
+If you run `actions/checkout` before this Action without `persist-credentials: false`, checkout configures `git` to authenticate as `github-actions[bot]`. In that case your later `git push` can still use `github-actions[bot]` credentials, so downstream Workflows are not triggered as expected for your token identity.
+
+Set `persist-credentials: false` in your checkout step to avoid this behavior.
