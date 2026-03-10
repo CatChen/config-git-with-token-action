@@ -2525,15 +2525,15 @@ __metadata:
   linkType: hard
 
 "token-who-am-i-action@npm:^2.0.0":
-  version: 2.0.13
-  resolution: "token-who-am-i-action@npm:2.0.13"
+  version: 2.0.15
+  resolution: "token-who-am-i-action@npm:2.0.15"
   dependencies:
     "@actions/core": "npm:^3.0.0"
     "@actions/github": "npm:^9.0.0"
     "@graphql-typed-document-node/core": "npm:^3.2.0"
     "@octokit/plugin-retry": "npm:^8.0.1"
     "@octokit/plugin-throttling": "npm:^11.0.1"
-  checksum: 10c0/64f04c4f6f6a5e153256b5d57fe190cd5daaf1ea4de324ceec5c6b7ec615c3672ff29e54fdb46009eaaf21e5e2a1e2f733815e1dbfac6ff22d7c19942b74e0eb
+  checksum: 10c0/4d87df991b25af6e1b5164d9739afeab0e5626b938d23d2b9af1557399e6c985c9e5fefe78b93b9dcbf4547cb426833a5f1b5f7ce3f863e0dc4107e06dc5ad43
   languageName: node
   linkType: hard
 
