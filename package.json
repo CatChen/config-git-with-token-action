@@ -10,28 +10,35 @@
     "build": "rm -rf dist && yarn tsc",
     "bundle": "rm -rf bundle && yarn ncc build src/index.ts --source-map --license licenses.txt --out bundle",
     "format": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -c eslint.config.js",
-    "prepublishOnly": "pinst --disable && yarn build",
     "postpublish": "pinst --enable",
+    "prepare": "is-ci || husky",
+    "prepublishOnly": "pinst --disable && yarn build",
     "preversion": "yarn && yarn build && yarn bundle",
-    "prepare": "is-ci || husky"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CatChen/config-git-with-token-action.git"
   },
   "author": "Cat Chen",
-  "license": "MIT",
+  "homepage": "https://github.com/CatChen/config-git-with-token-action#readme",
   "bugs": {
     "url": "https://github.com/CatChen/config-git-with-token-action/issues"
   },
-  "homepage": "https://github.com/CatChen/config-git-with-token-action#readme",
-  "funding": "https://github.com/CatChen/config-git-with-token-action?sponsor=1",
+  "dependencies": {
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0",
+    "@actions/github": "^9.0.0",
+    "@octokit/core": "^7.0.0",
+    "graphql": "^16.11.0",
+    "token-who-am-i-action": "^2.0.16"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^10.0.1",
-    "@serverless-guru/prettier-plugin-import-order": "^0.4.2",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@types/node": "^25.3.5",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
@@ -44,19 +51,16 @@
     "lint-staged": "^16.3.2",
     "pinst": "^3.0.0",
     "prettier": "^3.0.2",
+    "prettier-plugin-package": "^2.0.0",
     "typescript": "^5.0.2",
     "typescript-eslint": "^8.0.0"
   },
-  "dependencies": {
-    "@actions/core": "^3.0.0",
-    "@actions/exec": "^3.0.0",
-    "@actions/github": "^9.0.0",
-    "token-who-am-i-action": "^2.0.0"
-  },
+  "funding": "https://github.com/CatChen/config-git-with-token-action?sponsor=1",
   "lint-staged": {
-    "*.(ts,js)": "yarn lint --fix",
-    "*.json": "yarn prettier -w",
-    "*.(yml,yaml)": "yarn prettier -w",
-    "*.(md,markdown)": "yarn prettier -w"
+    "*.{ts,js}": [
+      "yarn format",
+      "yarn lint --fix"
+    ],
+    "*.{json,yml,yaml,md,markdown}": "yarn format"
   }
 }
