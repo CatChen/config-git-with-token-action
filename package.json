@@ -9,6 +9,7 @@
   "scripts": {
     "build": "rm -rf dist && yarn tsc",
     "bundle": "rm -rf bundle && yarn ncc build src/index.ts --source-map --license licenses.txt --out bundle",
+    "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -c eslint.config.js",
     "prepublishOnly": "pinst --disable && yarn build",
