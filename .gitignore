@@ -122,6 +122,9 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# npm lock file (this is a yarn project)
+package-lock.json
+
 # yarn v2
 .yarn/cache
 .yarn/unplugged
