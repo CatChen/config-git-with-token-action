@@ -1,6 +1,6 @@
 {
   "name": "config-git-with-token-action",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "description": "This GitHub Action configures git and gh to act as the user or bot behind a GitHub token.",
   "license": "MIT",
   "repository": {
