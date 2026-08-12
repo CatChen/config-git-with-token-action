@@ -2042,15 +2042,15 @@ __metadata:
   linkType: hard
 
 "token-who-am-i-action@npm:^2.0.16":
-  version: 2.0.27
-  resolution: "token-who-am-i-action@npm:2.0.27"
+  version: 2.0.28
+  resolution: "token-who-am-i-action@npm:2.0.28"
   dependencies:
     "@actions/core": "npm:^3.0.0"
     "@actions/github": "npm:^9.0.0"
     "@octokit/core": "npm:^7.0.5"
     "@octokit/plugin-retry": "npm:^8.0.1"
     "@octokit/plugin-throttling": "npm:^11.0.1"
-  checksum: 10c0/95c85b7b2eb6c235dd5eb7fb76f3ec30289014684cf6444ea10ff777f90b497f3d2a28d939b56e94c9473f75c91952b5d2b22db381987f4a3c3f4c5c31a4e3b0
+  checksum: 10c0/838d10242a78add82c5029f53a7a7ccc864b99bd375c35501db6c2757fa11fe54886e741476f7011c2960980dc41e59796d3630272bb8bc630c3bfc2c28d1a95
   languageName: node
   linkType: hard
 
